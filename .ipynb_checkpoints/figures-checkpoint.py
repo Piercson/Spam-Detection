@@ -11,6 +11,7 @@ def plot_wordclouds(spam_words,ham_words):
                 background_color ='white',
                 stopwords = stopwords,
                 min_font_size = 10).generate(ham_words)
+    # Image for both Spam and ham words
     fig, (ax0,ax1) = plt.subplots(1,2,figsize = (30, 30), facecolor = None)
     ax0.imshow(spam_wordcloud)
     ax0.set_title("Spam Words",fontsize = 50)
