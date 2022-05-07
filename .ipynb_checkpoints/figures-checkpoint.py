@@ -31,9 +31,6 @@ def plot_dist_classes(data):
     ax.set_xlabel("Classes",fontsize=16)
     
 def plot_heatmap(y_valid,y_pred, labels, title):
-    labels = ['ham','spam']
-    cf = confusion_matrix(y_valid,y_pred,labels=labels)
-    labels = ['Spam',"Ham"]
     crosstab = pd.crosstab(y_valid, y_pred, rownames = ['Actual'], colnames =['Predicted'], margins = False)
     plt.figure() # Push new figure on stack
     htmap = sns.heatmap(crosstab,cbar=False,xticklabels=labels,yticklabels=labels,annot=True,fmt="d",cmap='Blues').set(title=title)
