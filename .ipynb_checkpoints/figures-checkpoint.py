@@ -34,7 +34,7 @@ def plot_heatmap(y_valid,y_pred, labels, title):
     crosstab = pd.crosstab(y_valid, y_pred, rownames = ['Actual'], colnames =['Predicted'], margins = False)
     plt.figure() # Push new figure on stack
     htmap = sns.heatmap(crosstab,cbar=False,xticklabels=labels,yticklabels=labels,annot=True,fmt="d",cmap='Blues').set(title=title)
-    plt.savefig(title+".png")
+    plt.savefig("figures/"+title+".png")
 
 def plot_num_words_per_sms(num_words):
     fig, ax = plt.subplots()
